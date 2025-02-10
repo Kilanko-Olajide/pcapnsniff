@@ -57,6 +57,8 @@ int main(void) {
     }
 
     int device_num;
+
+    // Prompt for the device to sniff on
     printf("What device do you want to sniff on\n");
     scanf("%d", &device_num);
 
