@@ -67,7 +67,7 @@ int main(void) {
     printf("Sniffing on device: %s\n", d->name);
 
     // Enable promiscuous mode
-    handle = pcap_open_live(device, 1024, 1, 1000, errbuf);
+    handle = pcap_open_live(d->name, 1024, 1, 1000, errbuf);
     if (handle == NULL) {
         fprintf(stderr, "Unable to open device %s: %s\n", device, errbuf);
         exit(EXIT_FAILURE);
