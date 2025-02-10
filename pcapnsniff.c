@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 // Maximum bytes to capture per packet
-#define NUM_PACKETS 3       
+    
 
 
 void dump(const unsigned char *packet, int packet_length) {
@@ -33,7 +33,7 @@ int main(void) {
     const unsigned char  *packet;
     struct pcap_pkthdr header;
     pcap_if_t *alldevs, *d;
-    int i, j;
+    int i, j, NUM_PACKETS;
 
 
     // Retrieve the device list using pcap_findalldevs (pcap_lookupdev is deprecated)
@@ -61,6 +61,9 @@ int main(void) {
     // Prompt for the device to sniff on
     printf("What device do you want to sniff on\n");
     scanf("%d", &device_num);
+    // Promt for the number of packets to capture
+    printf("How many packets do you want capture\n");
+    scanf("%d", &NUM_PACKETS);
 
 
     for (d = alldevs, i = 1; i < device_num; d = d->next, i++);
